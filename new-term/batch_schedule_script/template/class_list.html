@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>计算机学院班级课表</title>
+</head>
+<body>
+    <h1 style="text-align: center">计算机学院班级课表</h1>
+    {% for major, major_dict in class.items() %}
+    <div style="background-color: rgb(200, 200, 200);">{{ major }}</div>
+    <div>
+        <table>
+            <tr>
+                {% for grade in major_dict['head'] %}
+                <th style="width: 25%; text-align: left;">{{ grade }}</th>
+                {% endfor %}
+            </tr>
+            {% for class_list in major_dict['body'] %}
+            <tr>
+                {% for value in class_list[1] %}
+                    <td>
+                        <a href="{{ value }}.html">{{ value }}</a>
+                    </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endfor %}
+</body>
+</html>

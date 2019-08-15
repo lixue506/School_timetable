@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程表</title>
+</head>
+<body>
+    <div>
+        <table class="content" style="width:98%; margin-left:10px">
+            <th colspan="9">
+                <span class="time">{{ semester }}</span>
+                <span class="name">{{ title }}</span>
+                <span class="other">{{ other }}</span>
+            </th>
+            <tr>
+                <td width="7.5%">时间段</td>
+                <td width="5%">节次</td>
+                <td width="12.5%">星期一</td>
+                <td width="12.5%">星期二</td>
+                <td width="12.5%">星期三</td>
+                <td width="12.5%">星期四</td>
+                <td width="12.5%">星期五</td>
+                <td width="12.5%">星期六</td>
+                <td width="12.5%">星期日</td>
+            </tr>
+            <tr>
+                <td rowspan="4">上午</td>
+                <td>1</td>
+                {% for course in first %}
+                    <td rowspan="2">
+                        <span class="text-cont">{{ course }}</span>
+                    </td>
+                {% endfor %}</tr>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                {% for course in Second %}
+                    <td rowspan="2">
+                        <span class="text-cont">{{ course }}</span>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td rowspan="4">下午</td>
+                <td>5</td>
+                {% for course in Third %}
+                    <td rowspan="2">
+                        <span class="text-cont">{{ course }}</span>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                {% for course in Fourth %}
+                    <td rowspan="2">
+                        <span class="text-cont">{{ course }}</span>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td rowspan="2">晚上</td>
+                <td>9</td>
+                {% for course in Fifth %}
+                    <td rowspan="2">
+                        <span class="text-cont">{{ course }}</span>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td>10</td>
+            </tr>
+        </table>
+    </div>
+    <style>
+        * {
+            color: #666666;
+            font-size: 16px;
+        }
+        span.name {
+            font-size: 30px;
+        }
+        span.time {
+            font-size: 14px;
+            float: left;
+        }
+        span.other {
+            font-size: 14px;
+            float: right;
+        }
+        table.content,
+        td,
+        th {
+            border: 1px solid #ddd;
+        }
+        td{
+            font: bold 18px/30px verdana;
+            text-align: center;
+            height: auto !important;
+            height: 50px;
+            min-height: 50px;
+        }
+        table.content {
+            width: 98%;
+            margin-left: 10px;
+        }
+        .text-cont {
+            color: blue;
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html>

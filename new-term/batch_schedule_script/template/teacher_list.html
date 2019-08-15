@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>计算机学院教师课表</title>
+</head>
+
+<body>
+    <h1 style="text-align: center">计算机学院教师课表</h1>
+    <ul>
+        {% for value in name.values() %}
+            {% for teacher in value %}
+            <li style="width: 20%; float: left;">
+                <a href="{{ teacher }}.html" style="text-decoration: none;">{{ teacher }}</a>
+            </li>
+            {% endfor %}
+            <br style="clear: both;" /> <br />
+        {% endfor %}
+    </ul>
+</body>
+</html>
